@@ -34,21 +34,60 @@
             margin-top: 1em;
             font-size: 0.95em;
         }
-    </style>
+        .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #000;
+        color: #fff;
+        padding: 8px 16px;
+        z-index: 100;
+        text-decoration: none;
+        transition: top 0.3s ease;
+    }
+    .skip-link:focus {
+        top: 0;
+    }
+</style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <main role="main" id="main-content">
     <h1>Kaleb Coberly</h1>
     <div class="contact">
         📍 Bellingham, WA, USA | ✉️ <a href="mailto:kaleb.coberly@gmail.com">kaleb.coberly@gmail.com</a><br>
-        🔗 <a href="https://linkedin.com/in/kaleb-coberly">linkedin.com/in/kaleb-coberly</a><br>
-        🌐 <a href="https://kalebcoberly.com">kalebcoberly.com</a> | 💻 <a href="https://github.com/KalebCoberly">github.com/KalebCoberly</a>
+        🔗 <a href="https://linkedin.com/in/kaleb-coberly">Connect on LinkedIn</a><br>
+        🌐 <a href="https://kalebcoberly.com">Visit my website</a> | 💻 <a href="https://github.com/KalebCoberly">github.com/KalebCoberly</a>
     </div>
 
-    <div class="downloads">
-        📄 Download this résumé as:
-        <a href="Kaleb_Coberly_resume.pdf" target="_blank" rel="noopener noreferrer">PDF</a> |
-        <a href="Kaleb_Coberly_resume.docx" download>Word (.docx)</a>
-    </div>
+    <div class="downloads" aria-labelledby="resume-download-label">
+  <h2 id="resume-download-label" class="visually-hidden">Download Résumé</h2>
+  📄 Download this résumé as:
+  <a href="Kaleb_Coberly_resume.pdf" target="_blank" rel="noopener noreferrer">PDF</a> |
+  <a href="Kaleb_Coberly_resume.docx" download aria-label="Download résumé as Word document">Word (.docx)</a>
+</div>
 
     <h2>Summary</h2>
     <p>Backend software/data engineer with a background in research and analysis. Builds and deploys reliable tools, analytics, and pipelines. Supports users and writes documentation. Improves systems with a focus on clarity, maintainability, and impact. Prioritizes data quality, methodological validity, and meaningful results. Develops pipelines, tooling, documentation, and analytics that help others get reliable answers from data.</p>
@@ -103,5 +142,6 @@
         <li>Oracle Database SQL Certified Associate – Oracle, Jul 2020</li>
         <li>CompTIA A+, Network+, Project+ – CompTIA, 2019–2020</li>
     </ul>
+  </main>
 </body>
 </html>
