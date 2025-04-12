@@ -37,9 +37,12 @@
       margin: 0 0.5rem;
       transition: color 0.2s ease-in-out;
     }
-    a:hover {
+    a:hover,
+    a:focus {
       color: #ffffff;
       text-decoration: underline;
+      outline: 2px solid #90caf9;
+      outline-offset: 2px;
     }
     .links {
       margin: 1rem 0;
@@ -66,6 +69,16 @@
       padding: 2rem 1rem;
       margin-top: 3rem;
     }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      border: 0;
+    }
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -81,42 +94,46 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <img class="profile-pic" src="images/headshot.png" alt="Profile Photo">
+  <header class="header" role="banner">
+    <img class="profile-pic" src="images/headshot.png" alt="Headshot of Kaleb Coberly, wearing a cap that says 'Solvem Probler' and sitting in front of an unfinished wall.">
     <h1>Kaleb Coberly</h1>
-  </div>
+  </header>
 
-  <div class="section">
-    <p>
-      Backend software/data engineer, data analyst, casual poet, and benign troublemaker with a love for beautiful systems, "natural" and "artificial."
-    </p>
-    <p>
-      I build software for missions that matter, things I care about.
-    </p>
-    <p>
-      Some things I've found I care about are: sustainability and equity, quality and enrichment, curiosity and creativity, and integrity.
-    </p>
-    <p>
-      If you can get behind that, let's connect.
-    </p>
-    <div class="links">
-      <a href="https://github.com/KalebCoberly" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/kaleb-coberly" target="_blank">LinkedIn</a>
-      <a href="https://www.facebook.com/share/1EZ59BDqMG" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com/sauerklub/" target="_blank">Instagram</a>
-    </div>
-  </div>
+  <main role="main">
+    <section class="section" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="visually-hidden">About Me</h2>
+      <p>
+        Backend software/data engineer, data analyst, casual poet, and benign troublemaker with a love for beautiful systems, "natural" and "artificial."
+      </p>
+      <p>
+        I build software for missions that matter, things I care about.
+      </p>
+      <p>
+        Some things I've found I care about are: sustainability and equity, quality and enrichment, curiosity and creativity, and integrity.
+      </p>
+      <p>
+        If you can get behind that, let's connect.
+      </p>
+      <div class="links">
+        <a href="https://github.com/KalebCoberly" target="_blank" rel="noopener noreferrer">GitHub: KalebCoberly</a>
+        <a href="https://www.linkedin.com/in/kaleb-coberly" target="_blank" rel="noopener noreferrer">LinkedIn: Kaleb Coberly</a>
+        <a href="https://www.facebook.com/share/1EZ59BDqMG" target="_blank" rel="noopener noreferrer">Facebook: Kaleb Coberly</a>
+        <a href="https://www.instagram.com/sauerklub/" target="_blank" rel="noopener noreferrer">Instagram: @sauerklub</a>
+      </div>
+    </section>
 
-  <div class="section project-highlight">
-    <img class="logo" src="images/crickets_and_comb_logo.png" alt="Crickets and Comb logo">
-    <p>
-      <strong>Crickets and Comb</strong> is a home for open-source tools that serve community-driven missions.
-      From bespoke tooling for my local food bank to generally useful Python modules, it's where I build software with soul.
-      And, it's one way I like to attract others who also labor with soul.
-    </p>
-    <div class="links">
-      <a href="https://cricketsandcomb.org" target="_blank">Visit Crickets and Comb</a>
-    </div>
-  </div>
+    <section class="section project-highlight" aria-labelledby="project-heading">
+      <h2 id="project-heading" class="visually-hidden">Crickets and Comb Project</h2>
+      <img class="logo" src="images/crickets_and_comb_logo.png" alt="Logo for Crickets and Comb, showing two abstract shapes resembling a cricket and honeycomb.">
+      <p>
+        <strong>Crickets and Comb</strong> is a home for open-source tools that serve community-driven missions.
+        From bespoke tooling for my local food bank to generally useful Python modules, it's where I build software with soul.
+        And, it's one way I like to attract others who also labor with soul.
+      </p>
+      <div class="links">
+        <a href="https://cricketsandcomb.org" target="_blank" rel="noopener noreferrer">Visit cricketsandcomb.org</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
