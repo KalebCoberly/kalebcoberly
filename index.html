@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kaleb Coberly</title>
+  <link rel="stylesheet" href="shared_styles.css" />
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
       background-color: #121212;
-      color: #e0e0e0;
+      color: #f0f0f0;
       line-height: 1.7;
       display: flex;
       flex-direction: column;
@@ -30,23 +31,6 @@
       text-align: left;
       margin-bottom: 3rem;
       padding: 0 1rem;
-    }
-    a {
-      color: #90caf9;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      transition: color 0.2s ease-in-out;
-    }
-    a:hover,
-    a:focus {
-      color: #ffffff;
-      text-decoration: underline;
-      outline: 2px solid #90caf9;
-      outline-offset: 2px;
-    }
-    .links {
-      margin: 1rem 0;
-      flex-wrap: wrap;
     }
     .profile-pic {
       width: 120px;
@@ -69,37 +53,16 @@
       padding: 2rem 1rem;
       margin-top: 3rem;
     }
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      border: 0;
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .section {
-        padding: 0 0.5rem;
-      }
-      .links a {
-        display: inline-block;
-        margin: 0.25rem 0.5rem;
-      }
-    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <header class="header" role="banner">
     <img class="profile-pic" src="images/headshot.png" alt="Headshot of Kaleb Coberly, wearing a cap that says 'Solvem Probler' and sitting in front of an unfinished wall.">
     <h1>Kaleb Coberly</h1>
   </header>
 
-  <main role="main">
+  <main role="main" id="main-content">
     <section class="section" aria-labelledby="about-heading">
       <h2 id="about-heading" class="visually-hidden">About Me</h2>
       <p>
@@ -116,17 +79,21 @@
       </p>
       <div class="links">
         <a href="https://github.com/KalebCoberly" target="_blank" rel="noopener noreferrer">GitHub: KalebCoberly</a>
-        <a href="https://www.linkedin.com/in/kaleb-coberly" target="_blank" rel="noopener noreferrer">LinkedIn: Kaleb Coberly</a>
+        <a href="https://www.linkedin.com/in/kaleb-coberly" target="_blank" rel="noopener noreferrer">LinkedIn: kaleb-coberly</a>
         <a href="https://www.facebook.com/share/1EZ59BDqMG" target="_blank" rel="noopener noreferrer">Facebook: Kaleb Coberly</a>
         <a href="https://www.instagram.com/sauerklub/" target="_blank" rel="noopener noreferrer">Instagram: @sauerklub</a>
       </div>
+      <p>
+        <a href="Kaleb_Coberly_resume.html" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📄</span> View my résumé</a>
+      </p>
     </section>
 
     <section class="section project-highlight" aria-labelledby="project-heading">
-      <h2 id="project-heading" class="visually-hidden">Crickets and Comb Project</h2>
+      <h2 id="project-heading" class="visually-hidden">Crickets and Comb project</h2>
       <img class="logo" src="images/crickets_and_comb_logo.png" alt="Logo for Crickets and Comb, showing two abstract shapes resembling a cricket and honeycomb.">
+      <h3 style="text-align: center; margin-top: 0;">Crickets and Comb</h3>
       <p>
-        <strong>Crickets and Comb</strong> is a home for open-source tools that serve community-driven missions.
+        Crickets and Comb is a home for open-source tools that serve community-driven missions.
         From bespoke tooling for my local food bank to generally useful Python modules, it's where I build software with soul.
         And, it's one way I like to attract others who also labor with soul.
       </p>
