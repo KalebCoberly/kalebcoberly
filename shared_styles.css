@@ -1,11 +1,4 @@
 /* shared_styles.css */
-
-/* Typography & layout base */
-body {
-    font-family: sans-serif;
-    line-height: 1.7;
-    color: #f0f0f0;
-  }
   
   /* Links */
   a {
@@ -54,19 +47,6 @@ body {
   .links {
     margin: 1rem 0;
     flex-wrap: wrap;
-  }
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 1rem;
-  }
-  .logo {
-    width: 80px;
-    height: auto;
-    margin: 0 auto 1rem;
-    display: block;
   }
   
   /* Responsive adjustments */
