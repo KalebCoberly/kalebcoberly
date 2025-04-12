@@ -11,11 +11,15 @@
       font-family: sans-serif;
       background-color: #121212;
       color: #e0e0e0;
-      line-height: 1.6;
+      line-height: 1.7;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
     h1 {
       font-size: 2.5rem;
@@ -23,16 +27,18 @@
     }
     .section {
       max-width: 600px;
-      text-align: center;
-      margin-bottom: 2rem;
+      text-align: left;
+      margin-bottom: 3rem;
       padding: 0 1rem;
     }
     a {
       color: #90caf9;
       text-decoration: none;
       margin: 0 0.5rem;
+      transition: color 0.2s ease-in-out;
     }
     a:hover {
+      color: #ffffff;
       text-decoration: underline;
     }
     .links {
@@ -45,6 +51,20 @@
       border-radius: 50%;
       object-fit: cover;
       margin-top: 1rem;
+    }
+    .logo {
+      width: 80px;
+      height: auto;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+    .project-highlight {
+      background-color: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
     }
     @media (max-width: 600px) {
       h1 {
@@ -61,12 +81,14 @@
   </style>
 </head>
 <body>
-  <img class="profile-pic" src="images/headshot.png" alt="Profile Photo">
-  <h1>Kaleb Coberly</h1>
+  <div class="header">
+    <img class="profile-pic" src="images/headshot.png" alt="Profile Photo">
+    <h1>Kaleb Coberly</h1>
+  </div>
 
   <div class="section">
     <p>
-      I'm Kaleb Coberly — a software/data engineer, data analyst, casual poet, and basic troublemaker with a love for beautiful systems, "natural" and "artificial."
+      Backend software/data engineer, data analyst, casual poet, and benign troublemaker with a love for beautiful systems, "natural" and "artificial."
     </p>
     <p>
       I build software for missions that matter, things I care about.
@@ -85,11 +107,12 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section project-highlight">
+    <img class="logo" src="images/crickets_and_comb_logo.png" alt="Crickets and Comb logo">
     <p>
       <strong>Crickets and Comb</strong> is a home for open-source tools that serve community-driven missions.
       From bespoke tooling for my local food bank to generally useful Python modules, it's where I build software with soul.
-      And, it's one place I like to find others who also labor with soul.
+      And, it's one way I like to attract others who also labor with soul.
     </p>
     <div class="links">
       <a href="https://cricketsandcomb.org" target="_blank">Visit Crickets and Comb</a>
