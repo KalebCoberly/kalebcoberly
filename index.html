@@ -11,22 +11,32 @@
       font-family: sans-serif;
       background-color: #121212;
       color: #e0e0e0;
-      line-height: 1.6;
+      line-height: 1.7;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
     }
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
     h1 {
       font-size: 2.5rem;
       margin: 1rem 0 0.5rem;
-      text-align: left;
     }
     .section {
       max-width: 600px;
       text-align: left;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       padding: 0 1rem;
+    }
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: #888;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
     }
     a {
       color: #90caf9;
@@ -60,7 +70,6 @@
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
-        text-align: center;
       }
       .section {
         padding: 0 0.5rem;
@@ -73,10 +82,13 @@
   </style>
 </head>
 <body>
-  <img class="profile-pic" src="images/headshot.png" alt="Profile Photo">
-  <h1>Kaleb Coberly</h1>
+  <div class="header">
+    <img class="profile-pic" src="images/headshot.png" alt="Profile Photo">
+    <h1>Kaleb Coberly</h1>
+  </div>
 
   <div class="section">
+    <div class="section-label">About</div>
     <p>
       Backend software/data engineer, data analyst, casual poet, and basic troublemaker with a love for beautiful systems, "natural" and "artificial."
     </p>
@@ -98,6 +110,7 @@
   </div>
 
   <div class="section project-highlight">
+    <div class="section-label">Project</div>
     <p>
       <strong>Crickets and Comb</strong> is a home for open-source tools that serve community-driven missions.
       From bespoke tooling for my local food bank to generally useful Python modules, it's where I build software with soul.
