@@ -5,7 +5,7 @@ on:
 
 jobs:
   close-external-prs:
-    uses: crickets-and-comb/shared/.github/workflows/block_outside_PRs.yml@feature/KalebCoberly/allow-no-org
+    uses: crickets-and-comb/shared/.github/workflows/block_outside_PRs.yml@main
     with:
       ALLOWED_USERS: "KalebCoberly"
     secrets:
