@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haiku | Kaleb Coberly</title>
+  <style>
+    body {
+      font-family: serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #fdf6e3;
+      color: #333;
+    }
+    .haiku {
+      white-space: pre-line;
+      text-align: center;
+      font-size: 1.5rem;
+      max-width: 30ch;
+      margin-bottom: 2rem;
+      transition: opacity 0.3s;
+    }
+    .nav {
+      display: flex;
+      gap: 1rem;
+    }
+    button {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="haiku" class="haiku"></div>
+  <div class="nav">
+    <button id="prev">← Prev</button>
+    <span id="counter"></span>
+    <button id="next">Next →</button>
+  </div>
+
+  <script>
+    const haikus = [
+      "An old silent pond\nA frog jumps into the pond—\nSplash! Silence again.",
+      "In the cicada's cry\nNo sign can foretell\nHow soon it must die.",
+      "Over the wintry\nForest, winds howl in rage\nWith no leaves to blow."
+    ];
+    let index = 0;
+
+    const haikuEl = document.getElementById("haiku");
+    const counterEl = document.getElementById("counter");
+
+    function updateDisplay() {
+      haikuEl.style.opacity = 0;
+      setTimeout(() => {
+        haikuEl.textContent = haikus[index];
+        counterEl.textContent = `${index + 1} / ${haikus.length}`;
+        haikuEl.style.opacity = 1;
+      }, 150);
+    }
+
+    document.getElementById("next").onclick = () => {
+      if (index < haikus.length - 1) {
+        index++;
+        updateDisplay();
+      }
+    };
+    document.getElementById("prev").onclick = () => {
+      if (index > 0) {
+        index--;
+        updateDisplay();
+      }
+    };
+
+    updateDisplay(); // initial load
+  </script>
+</body>
+</html>
