@@ -8,7 +8,7 @@
   <meta property="og:description" content="Backend engineer and data analyst with a tech-for-good focus.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kalebcoberly.com">
-  <meta property="og:image" content="https://kalebcoberly.com/images/headshot.png">
+  <meta property="og:image" content="https://kalebcoberly.com/images/headshot_thumbnail.jpg">
   <meta name="author" content="Kaleb Coberly">
   <title>Kaleb Coberly</title>
   <link rel="stylesheet" href="shared_styles.css" />
@@ -60,6 +60,41 @@
       padding: 2rem 1rem;
       margin-top: 3rem;
     }
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 0;
+        margin-bottom: 2rem;
+      }
+
+      .profile-pic {
+        width: 96px;
+        height: 96px;
+      }
+
+      .logo {
+        width: 60px;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-highlight {
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+      }
+
+      .links a {
+        display: block;
+        margin-bottom: 0.5rem;
+        word-break: break-word;
+      }
+    }
   </style>
 </head>
 <body>
@@ -96,21 +131,34 @@
     </section>
 
     <section class="section project-highlight" aria-labelledby="project-heading">
-      <h2 id="project-heading" class="visually-hidden">Crickets and Comb project</h2>
+      <h2 id="project-heading" class="visually-hidden">Link to Crickets and Comb project</h2>
       <img class="logo" src="images/crickets_and_comb_logo.png" alt="Logo for Crickets and Comb, showing two abstract shapes resembling a cricket and honeycomb.">
-      <h3 style="text-align: center; margin-top: 0;">Crickets and Comb</h3>
+      <div class="links" style="text-align: center;">
+        <h3 style="margin-top: 0;">
+          <a href="https://cricketsandcomb.org" target="_blank" rel="noopener noreferrer">Crickets and Comb</a>
+        </h3>
+      </div>
       <p>
-        Crickets and Comb is a home for open-source tools that serve community-driven missions.
+        Crickets and Comb (<a href="https://cricketsandcomb.org" target="_blank" rel="noopener noreferrer">cricketsandcomb.org</a>)
+        is a home for open-source tools that serve community-driven missions.
         From bespoke tooling for my local food bank to generally useful Python modules, it's where I build software with soul.
         And, it's one way I like to attract others who also labor with soul.
       </p>
-      <div class="links">
-        <a href="https://cricketsandcomb.org" target="_blank" rel="noopener noreferrer">Visit cricketsandcomb.org</a>
+    </section>
+
+    <section class="section project-highlight" aria-labelledby="haiku-heading">
+      <h2 id="haiku-heading" class="visually-hidden">Link to haiku collection</h2>
+      <img class="logo" src="images/haiku_logo_sized.jpg" alt="Image for haiku collection, showing a stylized representation of morning glory growing on an old rusty plow.">
+      <div class="links" style="text-align: center;">
+        <h3 style="margin-top: 0;"><a href="haiku.html" target="_blank" rel="noopener noreferrer">Haiku</a></h3>
       </div>
     </section>
+
   </main>
+
   <footer style="margin-top: 2rem; font-size: 0.9rem; text-align: center; color: #888;">
     &copy; 2025 Kaleb Coberly. All rights reserved.
   </footer>
+
 </body>
 </html>

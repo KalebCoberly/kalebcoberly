@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:title" content="Haiku | Kaleb Coberly">
+  <meta name="description" content="Haiku selected from 'Years of (Un)Tilling', 2019-2025.">
+  <meta property="og:description" content="Haiku selected from 'Years of (Un)Tilling', 2019-2025.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kalebcoberly.com/haiku.html">
+  <meta property="og:image" content="https://kalebcoberly.com/images/haiku_thumbnail.jpg">
+  <meta name="author" content="Kaleb Coberly">
+  <title>Haiku | Kaleb Coberly</title>
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #fdf6e3;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .book {
+      perspective: 1000px;
+      position: relative;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 40ch;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    .page {
+      position: relative;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: pre-line;
+      text-align: left;
+      font-size: 1.25rem;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff8e1;
+      border-radius: 8px;
+      transition: transform 0.6s ease;
+      transform: rotateY(0deg);
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      flex-direction: column;
+    }
+
+    .flipping {
+      transform: rotateY(180deg);
+    }
+
+    .nav {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      margin-top: 1.75rem;
+    }
+
+    #page-number {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.25rem;
+      text-align: center;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #eee;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #888;
+    }
+
+    nav[aria-label="Site"] a:hover {
+      text-decoration: underline;
+      color: #111;
+    }
+
+    @media (max-width: 500px) {
+      main {
+        padding: 0 1rem;
+      }
+
+      .book {
+        width: 90vw;
+        max-width: 90vw;
+      }
+
+      .page {
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+
+      .nav {
+          flex-direction: column;
+          align-items: center;
+      }
+
+      button {
+          width: 120px;
+          padding: 0.75rem 1.25rem;
+          font-size: 1.1rem;
+      }
+      footer {
+        font-size: 1rem;
+        color: #666;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main role="main">
+    <nav aria-label="Site">
+      <a href="index.html" style="
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #333;
+        text-decoration: none;
+      ">
+        ← Home
+      </a>
+    </nav>
+    <h1 style="
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 2rem;
+      text-align: center;
+      padding: 0 1rem;
+      max-width: 40ch;
+    ">
+      Selected haiku: <em>Years of (Un)Tilling</em>, 2019-2025
+    </h1>
+    <div class="book">
+      <div id="page" class="page"></div>
+    </div>
+
+    <nav class="nav" aria-label="Haiku navigation">
+      <button id="prev" aria-label="Previous haiku">← Prev</button>
+      <button id="next" aria-label="Next haiku">Next →</button>
+    </nav>
+
+    <div id="page-number" aria-live="polite"></div>
+  </main>
+  
+  <footer>&copy; 2025 Kaleb Coberly. All rights reserved.</footer>
+
+  <script>
+    const haikus = [
+`Crocuses wilting,
+daffodil, erect, bows head.
+Train whistles outbound.
+
+- March, 2025`,
+
+`January sun
+shines on legs, bare skin, indoors.
+Fried eggs on soft toast.
+
+- January, 2025`,
+
+`Lake brush, two strangers,
+winter birds flock all palms up —
+He holds no more seed.
+
+Grip of small talons.
+The tick of an empty peck.
+A departure's weight.
+
+- November, 2024`,
+
+`Mom crouched in garden.
+Did not know she was locked out.
+An arrangement left.
+
+- August, 2024`,
+
+`Leaving first dance class,
+bike newly morning gloried
+— Bellingham sidewalk.
+
+- August, 2024`,
+
+`Blossoms, delicate,
+no more than they need to be.
+
+- April, 2024`,
+
+`Winter apple sky
+silhouetted thicket rocks —
+crunch gravel, limping.
+
+- January, 2024`,
+
+`yellow magic shroom
+in mildewed tent-door grass;
+bee plucks hanging worm.
+
+- October, 2022`,
+
+`Drooping peonies
+crowd still-fresh blooms, wide open.
+Petals circle jar.
+
+- June, 2021`,
+
+`Wet lilac leaves cling
+to worn paperback cover,
+blue "Infinite Jest."
+
+- April, 2021`,
+
+`Tuesday afternoon
+pilsner one of six, piss hue;
+Dutch shepherd licks paw.
+
+- March, 2021`,
+
+`Railroad Trail bows in 
+under Blackberry Moon heat
+to August strollers.
+
+- September, 2020`,
+
+`Wide open window.
+Petals of last year's goddess
+blown, crumble about the floor.
+
+Delayed vacuum day
+looks down, anywhere but down.
+Dirty garden feet.
+
+No more housecleaners
+in The Time of the Covid.
+Tomorrow studies.
+
+- May, 2020`,
+
+`I've begun
+to think with my thumb.
+That is all.
+
+- October, 2019`,
+
+`2009 shreds
+the biggest thesis I wrote.
+I cry with relief.
+
+2013 burns
+almost all I ever wrote.
+I still have my voice.
+
+2019, scrap
+my socials, moments captured
+lost to my current.
+
+Screens hum code and plots,
+the hottest June week backlit.
+A poem insists.
+
+I have a website.
+It holds my latest haiku.
+This is not haiku.
+
+I breathe real spring air.
+
+- April, 2025`,
+    ];
+
+    let index = 0;
+
+    const page = document.getElementById("page");
+    const next = document.getElementById("next");
+    const prev = document.getElementById("prev");
+    const pageNumber = document.getElementById("page-number");
+
+    function updateButtons() {
+      prev.disabled = index === 0;
+      next.disabled = index === haikus.length - 1;
+    }
+
+    function updatePageNumber() {
+      pageNumber.textContent = `${index + 1} of ${haikus.length}`;
+    }
+
+    function flipToHaiku(newIndex) {
+      page.classList.add("flipping");
+
+      setTimeout(() => {
+        page.textContent = haikus[newIndex];
+        updateButtons();
+        updatePageNumber();
+      }, 300);
+
+      setTimeout(() => {
+        page.classList.remove("flipping");
+      }, 600);
+    }
+
+    page.textContent = haikus[index];
+    updateButtons();
+    updatePageNumber();
+
+    next.addEventListener("click", () => {
+      if (index < haikus.length - 1) {
+        index++;
+        flipToHaiku(index);
+      }
+    });
+
+    prev.addEventListener("click", () => {
+      if (index > 0) {
+        index--;
+        flipToHaiku(index);
+      }
+    });
+  </script>
+</body>
+</html>
