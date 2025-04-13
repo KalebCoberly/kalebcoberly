@@ -185,18 +185,27 @@
 
   <script>
     const haikus = [
+      {
+        slug: "crocuses-wilting",
+        text:
 `Crocuses wilting,
 daffodil, erect, bows head.
 Train whistles outbound.
 
-- March, 2025`,
-
+- March, 2025`
+      },
+      {
+        slug: "january-sun",
+        text:
 `January sun
 shines on legs, bare skin, indoors.
 Fried eggs on soft toast.
 
-- January, 2025`,
-
+- January, 2025`
+      },
+      {
+        slug: "lake-brush",
+        text:
 `Lake brush, two strangers,
 winter birds flock all palms up —
 He holds no more seed.
@@ -205,60 +214,92 @@ Grip of small talons.
 The tick of an empty peck.
 A departure's weight.
 
-- November, 2024`,
-
+- November, 2024`
+      },
+      {
+        slug: "mom-crouched",
+        text:
 `Mom crouched in garden.
 Did not know she was locked out.
 An arrangement left.
 
-- August, 2024`,
-
+- August, 2024`
+      },
+      {
+        slug: "leaving-first",
+        text:
 `Leaving first dance class,
 bike newly morning gloried
 — Bellingham sidewalk.
 
-- August, 2024`,
-
+- August, 2024`
+      },
+      {
+        slug: "blossoms-delicate",
+        text:
 `Blossoms, delicate,
 no more than they need to be.
 
-- April, 2024`,
-
+- April, 2024`
+      },
+      {
+        slug: "winter-apple",
+        text:
 `Winter apple sky
 silhouetted thicket rocks —
 crunch gravel, limping.
 
-- January, 2024`,
-
+- January, 2024`
+      },
+      {
+        slug: "yellow-magic",
+        text:
 `yellow magic shroom
 in mildewed tent-door grass;
 bee plucks hanging worm.
 
-- October, 2022`,
-
+- October, 2022`
+      },
+      {
+        slug: "drooping-peonies",
+        text:
 `Drooping peonies
 crowd still-fresh blooms, wide open.
 Petals circle jar.
 
-- June, 2021`,
-
+- June, 2021`
+      },
+      {
+        slug: "wet-lilac",
+        text:
 `Wet lilac leaves cling
 to worn paperback cover,
 blue "Infinite Jest."
 
-- April, 2021`,
-
+- April, 2021`
+      },
+      {
+        slug: "tuesday-afternoon",
+        text:
 `Tuesday afternoon
 pilsner one of six, piss hue;
 Dutch shepherd licks paw.
 
-- March, 2021`,
+- March, 2021`
+      },
+      {
+        slug: "railroad-trail",
+        text:
 
 `Railroad Trail bows in 
 under Blackberry Moon heat
 to August strollers.
 
-- September, 2020`,
+- September, 2020`
+      },
+      {
+        slug: "wide-open",
+        text:
 
 `Wide open window.
 Petals of last year's goddess
@@ -272,13 +313,21 @@ No more housecleaners
 in The Time of the Covid.
 Tomorrow studies.
 
-- May, 2020`,
+- May, 2020`
+      },
+      {
+        slug: "thumb-think",
+        text:
 
 `I've begun
 to think with my thumb.
 That is all.
 
-- October, 2019`,
+- October, 2019`
+      },
+      {
+        slug: "no-haiku",
+        text:
 
 `2009 shreds
 the biggest thesis I wrote.
@@ -302,7 +351,8 @@ This is not haiku.
 
 I breathe real spring air.
 
-- April, 2025`,
+- April, 2025`
+      },
     ];
 
     let index = 0;
@@ -325,9 +375,10 @@ I breathe real spring air.
       page.classList.add("flipping");
 
       setTimeout(() => {
-        page.textContent = haikus[newIndex];
+        page.textContent = haikus[newIndex].text;
         updateButtons();
         updatePageNumber();
+        history.replaceState(null, "", `?poem=${haikus[newIndex].slug}`);
       }, 300);
 
       setTimeout(() => {
@@ -335,7 +386,16 @@ I breathe real spring air.
       }, 600);
     }
 
-    page.textContent = haikus[index];
+    function getPoemIndexFromSlug() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("poem");
+      if (!slug) return 0;
+      const matchIndex = haikus.findIndex(h => h.slug === slug);
+      return matchIndex === -1 ? 0 : matchIndex;
+    }
+
+    index = getPoemIndexFromSlug();
+    page.textContent = haikus[index].text;
     updateButtons();
     updatePageNumber();
 
