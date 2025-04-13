@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Haiku | Kaleb Coberly</title>
   <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     body {
       font-family: Georgia, serif;
       background: #fdf6e3;
@@ -79,44 +85,60 @@
       opacity: 0.5;
       cursor: default;
     }
+
     @media (max-width: 500px) {
-        .book {
-            width: 90vw;
-            height: 50vw;
-        }
+      main {
+        padding: 0 1rem;
+      }
+      .book {
+          width: 90vw;
+          height: 50vw;
+      }
 
-        .page {
-            font-size: 1rem;
-            padding: 0.75rem;
-            word-break: break-word;
-            overflow-wrap: break-word;
-            box-sizing: border-box;
-        }
+      .page {
+          font-size: 1rem;
+          padding: 0.75rem;
+          word-break: break-word;
+          overflow-wrap: break-word;
+          box-sizing: border-box;
+      }
 
-        .nav {
-            flex-direction: column;
-            align-items: center;
-        }
+      .nav {
+          flex-direction: column;
+          align-items: center;
+      }
 
-        button {
-            width: 120px;
-            padding: 0.75rem 1.25rem;
-            font-size: 1.1rem;
-        }
+      button {
+          width: 120px;
+          padding: 0.75rem 1.25rem;
+          font-size: 1.1rem;
+      }
+
+      footer {
+        font-size: 0.85rem;
+        margin-top: 1.5rem;
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="book">
-    <div id="page" class="page"></div>
-  </div>
+  <main role="main">
+    <div class="book">
+      <div id="page" class="page"></div>
+    </div>
 
-  <nav class="nav" aria-label="Haiku navigation">
-    <button id="prev" aria-label="Previous haiku">← Prev</button>
-    <button id="next" aria-label="Next haiku">Next →</button>
-  </nav>
+    <nav class="nav" aria-label="Haiku navigation">
+      <button id="prev" aria-label="Previous haiku">← Prev</button>
+      <button id="next" aria-label="Next haiku">Next →</button>
+    </nav>
 
-  <div id="page-number"></div>
+    <div id="page-number"></div>
+  </main>
+
+  <footer style="margin-top: 2rem; font-size: 0.9rem; text-align: center; color: #888;">
+    &copy; 2025 Kaleb Coberly. All rights reserved.
+  </footer>
 
   <script>
     const haikus = [
