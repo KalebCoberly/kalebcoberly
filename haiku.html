@@ -42,9 +42,10 @@
       background: #fff8e1;
       border-radius: 8px;
       transition: transform 0.6s ease;
+      transform: rotateY(0deg);
     }
 
-    .page.flipping {
+    .flipping {
       transform: rotateY(180deg);
     }
 
@@ -90,30 +91,36 @@
     const next = document.getElementById("next");
     const prev = document.getElementById("prev");
 
-    function showHaiku(i) {
-      page.classList.remove("flipping");
-      page.style.transform = "rotateY(0deg)";
+    function flipToHaiku(newIndex) {
+      page.classList.add("flipping");
+
+      // Wait until halfway through the flip to change text
       setTimeout(() => {
-        page.textContent = haikus[i];
-        page.classList.add("flipping");
-      }, 50);
+        page.textContent = haikus[newIndex];
+      }, 300); // half of 600ms transition
+
+      // After full rotation, reset to front side
+      setTimeout(() => {
+        page.classList.remove("flipping");
+      }, 600);
     }
 
     next.addEventListener("click", () => {
       if (index < haikus.length - 1) {
         index++;
-        showHaiku(index);
+        flipToHaiku(index);
       }
     });
 
     prev.addEventListener("click", () => {
       if (index > 0) {
         index--;
-        showHaiku(index);
+        flipToHaiku(index);
       }
     });
 
-    showHaiku(index);
+    // Initial load
+    page.textContent = haikus[index];
   </script>
 </body>
 </html>
