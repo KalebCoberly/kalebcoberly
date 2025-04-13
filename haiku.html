@@ -100,12 +100,10 @@ With no leaves to blow.`
     function flipToHaiku(newIndex) {
       page.classList.add("flipping");
 
-      // Wait until halfway through the flip to change text
       setTimeout(() => {
         page.textContent = haikus[newIndex];
-      }, 300); // half of 600ms transition
+      }, 300);
 
-      // After full rotation, reset to front side
       setTimeout(() => {
         page.classList.remove("flipping");
       }, 600);
@@ -125,7 +123,6 @@ With no leaves to blow.`
       }
     });
 
-    // Initial load
     page.textContent = haikus[index];
   </script>
 </body>
