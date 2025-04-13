@@ -103,6 +103,11 @@
       color: #888;
     }
 
+    nav[aria-label="Site"] a:hover {
+      text-decoration: underline;
+      color: #111;
+    }
+
     @media (max-width: 500px) {
       main {
         padding: 0 1rem;
@@ -133,6 +138,7 @@
         color: #666;
       }
     }
+
     @media (prefers-reduced-motion: reduce) {
       .page {
         transition: none !important;
@@ -142,6 +148,17 @@
 </head>
 <body>
   <main role="main">
+    <nav aria-label="Site">
+      <a href="index.html" style="
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #333;
+        text-decoration: none;
+      ">
+        ← Home
+      </a>
+    </nav>
     <h1 style="
       font-size: 1.5rem;
       font-weight: normal;
