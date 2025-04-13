@@ -1,126 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Haiku | Kaleb Coberly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Georgia, serif;
       background: #fdf6e3;
-      color: #333;
+      font-family: Georgia, serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      align-items: center;
+      height: 100vh;
       margin: 0;
     }
 
-    .book {
-      perspective: 1000px;
-      width: 320px;
-      height: 200px;
-      position: relative;
-      margin-bottom: 2rem;
+    #flipbook {
+      width: 400px;
+      height: 300px;
     }
 
     .page {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      backface-visibility: hidden;
-      transform-style: preserve-3d;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      white-space: pre-line;
-      text-align: center;
-      font-size: 1.25rem;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       background: #fff8e1;
-      border-radius: 8px;
-      transition: transform 0.6s ease;
-      transform: rotateY(0deg);
+      color: #333;
+      padding: 2rem;
+      text-align: center;
+      white-space: pre-line;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-size: 1.25rem;
+      border-radius: 6px;
     }
 
-    .flipping {
-      transform: rotateY(180deg);
-    }
-
-    .nav {
-      display: flex;
-      gap: 1rem;
-    }
-
-    button {
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-      border: none;
-      background: #eee;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:disabled {
-      opacity: 0.5;
-      cursor: default;
+    @media (max-width: 500px) {
+      #flipbook {
+        width: 90vw;
+        height: 60vw;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="book">
-    <div id="page" class="page"></div>
+
+<div id="flipbook">
+  <div class="page">
+    An old silent pond  
+    A frog jumps into the pond—  
+    Splash! Silence again.
   </div>
-
-  <div class="nav">
-    <button id="prev">← Prev</button>
-    <button id="next">Next →</button>
+  <div class="page">
+    In the cicada's cry  
+    No sign can foretell  
+    How soon it must die.
   </div>
+  <div class="page">
+    Over the wintry  
+    Forest, winds howl in rage  
+    With no leaves to blow.
+  </div>
+  <div class="page">
+    Clouds come and go,  
+    Leaving the moon to its peace  
+    In a sea of stars.
+  </div>
+</div>
 
-  <script>
-    const haikus = [
-      "An old silent pond\nA frog jumps into the pond—\nSplash! Silence again.",
-      "In the cicada's cry\nNo sign can foretell\nHow soon it must die.",
-      "Over the wintry\nForest, winds howl in rage\nWith no leaves to blow."
-    ];
-    let index = 0;
+<!-- Load jQuery + Turn.js from CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+<script>
+  $('#flipbook').turn({
+    width: 400,
+    height: 300,
+    autoCenter: true
+  });
+</script>
 
-    const page = document.getElementById("page");
-    const next = document.getElementById("next");
-    const prev = document.getElementById("prev");
-
-    function flipToHaiku(newIndex) {
-      page.classList.add("flipping");
-
-      // Wait until halfway through the flip to change text
-      setTimeout(() => {
-        page.textContent = haikus[newIndex];
-      }, 300); // half of 600ms transition
-
-      // After full rotation, reset to front side
-      setTimeout(() => {
-        page.classList.remove("flipping");
-      }, 600);
-    }
-
-    next.addEventListener("click", () => {
-      if (index < haikus.length - 1) {
-        index++;
-        flipToHaiku(index);
-      }
-    });
-
-    prev.addEventListener("click", () => {
-      if (index > 0) {
-        index--;
-        flipToHaiku(index);
-      }
-    });
-
-    // Initial load
-    page.textContent = haikus[index];
-  </script>
 </body>
 </html>
