@@ -22,7 +22,7 @@
       width: 320px;
       height: 200px;
       position: relative;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .page {
@@ -52,6 +52,15 @@
     .nav {
       display: flex;
       gap: 1rem;
+      margin-bottom: 0.5rem;
+      margin-top: 1.75rem;
+    }
+
+    #page-number {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.25rem;
+      text-align: center;
     }
 
     button {
@@ -74,46 +83,61 @@
     <div id="page" class="page"></div>
   </div>
 
-  <div class="nav">
-    <button id="prev">← Prev</button>
-    <button id="next">Next →</button>
-  </div>
+  <nav class="nav" aria-label="Haiku navigation">
+    <button id="prev" aria-label="Previous haiku">← Prev</button>
+    <button id="next" aria-label="Next haiku">Next →</button>
+  </nav>
+
+  <div id="page-number"></div>
 
   <script>
     const haikus = [
       `An old silent pond
 A frog jumps into the pond—
-Splash! Silence again.
+Splash! Silence again.`,
 
-September, 2018`,
       `In the cicada's cry
 No sign can foretell
-How soon it must die.
+How soon it must die.`,
 
-April, 2019`,
       `Over the wintry
 Forest, winds howl in rage
-With no leaves to blow.
-
-August, 2021`
+With no leaves to blow.`
     ];
+
     let index = 0;
 
     const page = document.getElementById("page");
     const next = document.getElementById("next");
     const prev = document.getElementById("prev");
+    const pageNumber = document.getElementById("page-number");
+
+    function updateButtons() {
+      prev.disabled = index === 0;
+      next.disabled = index === haikus.length - 1;
+    }
+
+    function updatePageNumber() {
+      pageNumber.textContent = `${index + 1} of ${haikus.length}`;
+    }
 
     function flipToHaiku(newIndex) {
       page.classList.add("flipping");
 
       setTimeout(() => {
         page.textContent = haikus[newIndex];
+        updateButtons();
+        updatePageNumber();
       }, 300);
 
       setTimeout(() => {
         page.classList.remove("flipping");
       }, 600);
     }
+
+    page.textContent = haikus[index];
+    updateButtons();
+    updatePageNumber();
 
     next.addEventListener("click", () => {
       if (index < haikus.length - 1) {
@@ -128,8 +152,6 @@ August, 2021`
         flipToHaiku(index);
       }
     });
-
-    page.textContent = haikus[index];
   </script>
 </body>
 </html>
