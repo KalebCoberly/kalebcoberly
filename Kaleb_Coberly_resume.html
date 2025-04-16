@@ -42,9 +42,11 @@
   <main role="main" id="main-content">
     <h1>Kaleb Coberly</h1>
     <div class="contact">
-        📍 Bellingham, WA, USA | ✉️ <a href="mailto:kaleb.coberly@gmail.com">kaleb.coberly@gmail.com</a><br>
+        📍 Bellingham, WA, USA<br>
+        ✉️ <a href="mailto:kaleb.coberly@gmail.com">kaleb.coberly@gmail.com</a><br>
         🔗 <a href="https://linkedin.com/in/kaleb-coberly">Connect on LinkedIn: kaleb-coberly</a><br>
-        🌐 <a href="https://kalebcoberly.com">Visit my website: kalebcoberly.com</a> | 💻 <a href="https://github.com/KalebCoberly">Find me on GitHub: KalebCoberly</a>
+        💻 <a href="https://github.com/KalebCoberly">Find me on GitHub: KalebCoberly</a><br>
+        🌐 <a href="https://kalebcoberly.com">Visit my website: kalebcoberly.com</a>
     </div>
 
     <div class="downloads" aria-labelledby="resume-download-label">
@@ -55,36 +57,37 @@
 </div>
 
     <h2>Summary</h2>
-    <p>Backend software/data engineer with a background in research and analysis. Builds and deploys reliable tools, analytics, and pipelines. Supports users and writes documentation. Improves systems with a focus on clarity, maintainability, and impact. Prioritizes data quality, methodological validity, and meaningful results. Develops pipelines, tooling, documentation, and analytics that help others get reliable answers from data.</p>
+    <p>Backend software engineer, data engineer with a background in research and analysis. Builds and deploys tools, analytics, and pipelines that help others reliably use data. Supports users and developers with documentation, dev tools, issue triage, hands-on training, and debugging. Improves systems with a focus on clarity and maintainability. Prioritizes data quality, reproducibility, validity, and meaningful results.</p>
 
     <h2>Skills</h2>
-    <p><strong>Programming & Scripting:</strong> Python, R, Bash, SQL, NoSQL<br>
-    <strong>DevOps & Tooling:</strong> Git, Docker, GitHub Actions, Jenkins, CI/CD, Python packaging, debugging, testing frameworks<br>
-    <strong>Data Engineering:</strong> ETL pipelines, data cleaning, diagnostics, versioning, reporting<br>
-    <strong>Analysis & Visualization:</strong> Pandas, NumPy, ggplot2, Excel<br>
-    <strong>Documentation & Support:</strong> Sphinx, reStructuredText, user training, contributor onboarding, issue triage<br>
-    <strong>Platforms & Environments:</strong> Linux, MacOS, Windows, HPC (Slurm), Bitbucket/Stash, VS Code, JIRA, ElasticSearch, MySQL</p>
+    <p><strong>Programming & Scripting:</strong> Python, R, Bash, SQL, NoSQL.<br>
+    <strong>DevOps & Tooling:</strong> Git, Make, Docker, GitHub Actions, Jenkins, CI/CD, Python packaging, debugging, QC and testing frameworks, pytest, pytype, black, flake8, jake.<br>
+    <strong>Data Engineering:</strong> ETL pipelines, RDBMS, database design, data modeling, data cleaning, data validation, methodological implementation, data versioning, MySQL, MariaDB, MongoDB, ElasticSearch, XML, JSON, CSV.<br>
+    <strong>ML Engineering:</strong> ML pipelines, feature engineering, performance evaluation, model validation, scikit-learn, caret.<br>
+    <strong>Analysis & Visualization:</strong> Pandas, NumPy, matplotlib, seaborn, ggplot2, datatable, dplyr, knitr, Jupyter Notebook, RStudio, R Markdown, mermaid, HTML, Excel.<br>
+    <strong>Documentation & Support:</strong> Sphinx, reStructuredText, user training, contributor onboarding, issue triage.<br>
+    <strong>Platforms & Environments:</strong> Linux, MacOS, Windows, HPC (Slurm, UGE), Kubernetes (k8s), Bitbucket/Stash, VS Code, RStudio, JIRA.</p>
 
     <h2>Experience</h2>
 
     <h3>Volunteer Software Engineer</h3>
     <p><em>Bellingham Food Bank, Nov 2024–Present</em></p>
     <ul>
-        <li>Built and deployed a tool to automate delivery planning, reducing staff workload by several hours each week. See <a href="https://cricketsandcomb.org/#projects">cricketsandcomb.org/#projects</a></li>
+        <li>Built and deployed a tool to automate delivery planning, reducing staff workload by several hours with each weekly use. See <a href="https://cricketsandcomb.org/#projects">https://cricketsandcomb.org/#projects</a>.</li>
         <li>Designed modular, CLI-based system integrating into staff workflows; led incremental rollout and training.</li>
         <li>Wrote complete documentation for non-technical users; maintain ongoing support based on user feedback.</li>
         <li>Implemented CI/CD, local + Docker testing, and reusable GitHub Actions workflows with high test coverage.</li>
-        <li>Released as an open-source project; maintain infrastructure to support contributors and mentorship.</li>
+        <li>Released as an open-source project; maintain infrastructure and lead collaborative development at all skill levels.</li>
     </ul>
 
     <h3>Research Engineer, Central Computation (Global Burden of Disease)</h3>
     <p><em>Institute for Health Metrics and Evaluation (IHME), Nov 2022–Oct 2024</em></p>
     <ul>
-        <li>Developed and maintained internal Python tools for data modeling, versioning, access, and dev workflows.</li>
-        <li>Contributed to a large in-house Python ecosystem: features, bugfixes, and major test coverage increases.</li>
-        <li>Maintained Jenkins builds across ~100 packages; debugged issues across DBs, APIs, Docker, and HPC.</li>
-        <li>Directly supported research teams: investigated failed model runs, data access issues, and tooling gaps.</li>
-        <li>Analyzed system usage and tool performance via ElasticSearch; documented software via Sphinx.</li>
+        <li>Developed and maintained internal Python and dev tools for data modeling, versioning, access, and dev workflows.</li>
+        <li>Contributed to a large in-house Python ecosystem: features, bugfixes, major test coverage increases, and documentation.</li>
+        <li>Maintained Jenkins builds across ~100 packages; debugged issues across DBs, Python APIs/CLIs, Docker, k8s, and HPC.</li>
+        <li>Directly supported research teams: Investigated failed model runs, data access issues, and tooling gaps.</li>
+        <li>Analyzed system usage and tool performance via ElasticSearch; ran ad-hoc reports and built automated report.</li>
     </ul>
 
     <h3>Data Analyst</h3>
@@ -92,8 +95,10 @@
     <ul>
         <li>Owned multiple data pipelines for COVID-19 production and reporting; reduced key runtime by 65%.</li>
         <li>Refactored vaccine and booster models for maintainability and extensibility.</li>
-        <li>Built diagnostic tools and automated reporting for data QC; led early Slurm transition for production jobs.</li>
-        <li>Extracted and processed national data (e.g. UK COVID cases) into standardized, versioned output.</li>
+        <li>Built diagnostic tools and plots, with automated reporting for data QC; inspected and cleaned data.</li>
+        <li>Led early Slurm transition for production jobs.</li>
+        <li>Built ETL pipeline in R of national data into standardized, versioned output.</li>
+        <li>Produced executive reports for world leaders, running ETL into R Markdown for PDFs; adapted to changing model outputs and feature requests.</li>
     </ul>
 
     <h2>Education</h2>
