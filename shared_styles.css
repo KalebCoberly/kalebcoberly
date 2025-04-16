@@ -2,17 +2,21 @@
   
   /* Links */
   a {
-    color: #90caf9;
-    text-decoration: none;
-    margin: 0 0.5rem;
-    transition: color 0.2s ease-in-out;
+    color: #4da6ff !important;
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    font-weight: 500;
   }
   a:hover,
   a:focus {
-    color: #ffffff;
-    text-decoration: underline;
-    outline: 2px solid #90caf9;
+    color: #82cfff !important;
+    text-decoration: underline !important;
+    outline: 2px solid #82cfff;
     outline-offset: 2px;
+  }
+  a:visited {
+    color: #b78aff !important;
   }
   
   /* Accessibility helpers */
